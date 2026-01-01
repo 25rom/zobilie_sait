@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 Опор — Тренажер осознанности</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --accent-carrot: #E67E51;
+            --accent-blue: #A5C4D4;
+            --text-main: #2D2D2D;
+            --text-light: #6B6B6B;
+            --capsule-bg: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { 
+            padding: 30px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(253, 251, 247, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .nav-links a { 
+            text-decoration: none; color: var(--text-main); 
+            margin-left: 30px; font-size: 0.9rem; transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-carrot); }
+
+        /* Hero Section */
+        .hero { padding: 100px 0; text-align: center; }
+        .hero-warning { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-carrot); margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 30px; }
+        .hero p { max-width: 600px; margin: 0 auto 40px; font-size: 1.2rem; color: var(--text-light); }
+
+        /* Capsule Form Elements */
+        .capsule { 
+            background: var(--capsule-bg); 
+            border-radius: 100px; 
+            padding: 20px 40px; 
+            display: inline-block;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            margin: 10px;
+        }
+
+        /* Bento Grid */
+        .bento { 
+            display: grid; 
+            grid-template-columns: repeat(12, 1fr); 
+            gap: 20px; 
+            margin: 100px 0; 
+        }
+        .bento-item { 
+            background: white; border-radius: 40px; padding: 40px; 
+            grid-column: span 6; border: 1px solid rgba(0,0,0,0.03);
+        }
+        .bento-item.wide { grid-column: span 8; }
+        .bento-item.small { grid-column: span 4; }
+        .bento-item h3 { margin-bottom: 15px; color: var(--accent-carrot); }
+
+        /* Narrative Section */
+        .narrative { 
+            background: #F4F1ED; padding: 100px 0; border-radius: 60px 60px 0 0; 
+        }
+        .narrative-content { max-width: 700px; margin: 0 auto; }
+        .quote { 
+            font-style: italic; border-left: 2px solid var(--accent-carrot); 
+            padding-left: 30px; margin: 40px 0; font-size: 1.2rem; color: var(--text-light);
+        }
+
+        /* CTA */
+        .cta-btn {
+            background: var(--accent-carrot); color: white;
+            padding: 20px 50px; border-radius: 100px; text-decoration: none;
+            display: inline-block; font-weight: 600; transition: 0.4s;
+            box-shadow: 0 15px 35px rgba(230, 126, 81, 0.3);
+        }
+        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(230, 126, 81, 0.4); }
+
+        @media (max-width: 768px) {
+            .bento-item { grid-column: span 12 !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div style="font-weight: 600; letter-spacing: 1px;">28 ОПОР</div>
+        <div class="nav-links">
+            <a href="#about">О методе</a>
+            <a href="#creator">От создателя</a>
+            <a href="#bot">Запустить бота</a>
+        </div>
+    </nav>
+
+    <!-- Block 1: Hero -->
+    <section class="hero">
+        <div class="hero-warning">⚠️ не для всех</div>
+        <h1>28 опор твоего внутреннего стержня</h1>
+        <p>Тренажёр для тех, кто сам управляет своей игрой. Цифровой инструмент для отключения внешнего шума.</p>
+        <a href="#" class="cta-btn">Войти в состояние</a>
+    </section>
+
+    <!-- Blocks 2, 4, 6: Value Bento Grid -->
+    <section id="about" class="bento">
+        <div class="bento-item wide">
+            <h3>Карточки как зеркало</h3>
+            <p>Они не дают готовых ответов, но подсвечивают слепые зоны. Это пространство предельной честности с самим собой.</p>
+        </div>
+        <div class="bento-item small" style="background: var(--accent-blue); color: white;">
+            <h3 style="color: white;">Инсайт изнутри</h3>
+            <p>Настоящие изменения происходят тогда, когда вывод рожден вами, а не получен в виде совета.</p>
+        </div>
+        <div class="bento-item small">
+            <h3>Без Эго</h3>
+            <p>Перед символом не нужно защищаться. Это инструмент для исследования личных добродетелей.</p>
+        </div>
+        <div class="bento-item wide">
+            <h3>Стимул и Реакция</h3>
+            <p>Между ними есть свобода. Карточки — это палка для ходьбы, помогающая выпрямить спину, пока воля не окрепнет.</p>
+        </div>
+    </section>
+
+    <!-- Block 8 & 9: Mechanics -->
+    <section style="text-align: center; padding: 100px 0;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Как играть?</h2>
+        <div class="capsule">Сформулируй намерение</div>
+        <div class="capsule">Нажми — случайный выбор</div>
+        <div class="capsule">Интегрируй в жизнь</div>
+        <div style="margin-top: 40px; color: var(--text-light); max-width: 600px; margin-left: auto; margin-right: auto;">
+            Мир снаружи — это просто зеркало, которое отражает твои внутренние настройки. Сначала настройка — потом результат.
+        </div>
+    </section>
+
+    <!-- Block 10: Storytelling & Creator -->
+    <section id="creator" class="narrative">
+        <div class="container">
+            <div class="narrative-content">
+                <h2 style="margin-bottom: 30px;">Между «заметил» и «исправил»</h2>
+                <p>Осознанность — это не когда ты стал идеальным. Это когда ты <strong>заметил</strong>, какой ты сейчас. Этого уже достаточно, чтобы вернуть руль себе.</p>
+                
+                <div class="quote">
+                    «...мы сохраняем возможность вдохновиться, продолжить плодотворную работу духа над самим собой» <br>
+                    <small>— Марсель Пруст</small>
+                </div>
+
+                <p>Это как в работе со штангой: когда техника «поплыла», суетливые правки в движении только мешают. Нужно просто заметить корень. Мои карточки — это личный опыт. Это ядро смысла для твоего личного исследования.</p>
+                
+                <div style="margin-top: 60px; padding: 40px; background: white; border-radius: 30px;">
+                    <h3 style="margin-bottom: 10px;">От автора</h3>
+                    <p style="font-size: 0.95rem;">Я не знаю, как правильно жить. Никто не знает. Но я знаю, что можно выковать свой характер, превращая абстрактные ценности в ежедневную практику. Эти 28 карточек — мой импульс для вас.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 100px 0; text-align: center;">
+        <p style="margin-bottom: 30px; font-family: 'Playfair Display'; font-size: 1.5rem;">Готовы встретиться с собой?</p>
+        <a href="#" class="cta-btn">Открыть Telegram бота</a>
+        <div style="margin-top: 50px; font-size: 0.8rem; color: var(--text-light);">
+            © 2025 Инструменты осознанности. Дизайн в стиле чистого минимализма.
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
