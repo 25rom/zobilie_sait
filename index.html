@@ -200,20 +200,31 @@
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(230,126,81,0.3); }
 
         .usage-frame { border: 2px solid var(--carrot); padding: 40px; border-radius: 40px; margin-top: 40px; text-align: center; background: rgba(230, 126, 81, 0.03); }
-        .iphone-frame { width: 240px; height: 480px; background: #2d2d2d; border-radius: 45px; border: 6px solid #444; overflow: hidden; margin: 0 auto; }
-        
+        .iphone-frame { 
+            width: 250px; /* Немного шире */
+            height: 520px; /* Немного выше для современных пропорций экрана */
+            background: #2d2d2d; 
+            border-radius: 40px; 
+            border: 8px solid #333; 
+            overflow: hidden; 
+            margin: 0 auto; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background-color: #E2F3E1; /* Фон рамки в цвет вашего приложения */
+        }        
         @media (max-width: 768px) {
             .scatter-item { position: static; margin-bottom: 10px !important; max-width: 100%; }
             .scattered-wrap { height: auto; }
             .func-split, .int-row, .benefits-nodes, .scenarios-visual { grid-template-columns: 1fr; flex-direction: column; }
             .essence-capsule { padding: 40px 20px; }
         }
-        .screen-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Картинка заполнит экран без искажений */
-    display: block;
-}
+       .screen-img {
+            width: 100%;
+            height: 100%;
+            /* ГЛАВНОЕ ИЗМЕНЕНИЕ: contain вместо cover */
+            object-fit: contain; 
+            display: block;
+            background-color: #E2F3E1; /* Чтобы не было черных полос, если скриншот короче */
+        }
        /* Дополнения для блока 8 */
         .int-card {
             background: var(--milk);
@@ -481,15 +492,15 @@
     <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
         <div>
             <div class="iphone-frame">
-                <img src="https://raw.githubusercontent.com/25rom/zobilie_sait/main/images/screen0.png" alt="Игровое поле" class="screen-img">
+                <img src="https://raw.githubusercontent.com/25rom/zobilie_sait/main/images/ScreenShot1.png" alt="Игровое поле" class="screen-img">
             </div>
             <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Игровое поле</strong><br>Переход в коллекцию и блокнот</p>
         </div>
         <div>
             <div class="iphone-frame">
-                <img src="https://raw.githubusercontent.com/25rom/zobilie_sait/main/images/screen1.png" alt="Коллекции" class="screen-img">
+                <img src="https://raw.githubusercontent.com/25rom/zobilie_sait/main/images/ScreenShot2.png" alt="Коллекции" class="screen-img">
             </div>
-            <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Коллекции</strong><br>Исследование и обратная связь</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Коллекции</strong><br>Блокнот и обратная связь</p>
         </div>
     </div>
 </section>
