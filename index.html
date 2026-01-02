@@ -98,18 +98,47 @@
         .thesis-organic { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
         .thesis-box { flex: 1 1 300px; padding: 25px; border-left: 1px solid var(--carrot); }
 
-        /* BLOCK 8: UNIFIED INTENTION */
+      /* BLOCK 8: UNIFIED INTENTION — ОБНОВЛЕННЫЙ */
         .intention-unified {
             background: white; border: 1px solid var(--carrot); border-radius: 50px; padding: 50px;
-            display: flex; flex-direction: column; gap: 35px;
+            display: flex; flex-direction: column; gap: 40px;
         }
-        .int-row { display: flex; gap: 30px; justify-content: space-between; }
-        .int-col { flex: 1; }
+        .int-row { display: flex; gap: 20px; align-items: stretch; }
+        
+        /* Делаем обе колонки одинаковыми карточками */
+        .int-col { 
+            flex: 1; 
+            background: var(--milk); 
+            padding: 35px; 
+            border-radius: 30px; 
+            display: flex; 
+            flex-direction: column;
+        }
+        
         .int-tag { 
-            display: inline-block; padding: 5px 15px; border-radius: 100px; 
-            background: var(--carrot); color: white; font-size: 0.75rem; font-weight: 600; margin-bottom: 15px; 
+            display: inline-block; padding: 6px 16px; border-radius: 100px; 
+            background: var(--carrot); color: white; font-size: 0.75rem; font-weight: 600; 
+            margin-bottom: 25px; align-self: flex-start; /* Фиксирует тег вверху */
         }
-        .int-result { border-top: 1px solid var(--border); padding-top: 25px; text-align: center; }
+
+        /* Стиль для строки "иконка + текст" */
+        .int-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .int-item:last-child { margin-bottom: 0; }
+        
+        .int-item svg { 
+            width: 24px; height: 24px; flex-shrink: 0; fill: none; stroke-width: 1.3; margin-top: 3px;
+        }
+        .int-item p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-soft); }
+        
+        /* Блок результата */
+        .int-result { border-top: 1px solid var(--border); padding-top: 35px; text-align: center; }
+        .result-content { display: flex; align-items: center; justify-content: center; gap: 20px; max-width: 850px; margin: 0 auto; }
+        .result-content svg { width: 32px; height: 32px; flex-shrink: 0; stroke: var(--graphite); fill: none; stroke-width: 1.2; }
+
+        @media (max-width: 768px) {
+            .int-row { flex-direction: column; }
+            .result-content { flex-direction: column; text-align: center; }
+        }
 
         /* BLOCK 9: SCENARIOS ACTIVE HOVER */
         .scenarios-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -149,7 +178,7 @@
     object-fit: cover; /* Картинка заполнит экран без искажений */
     display: block;
 }
-        /* Дополнения для блока 8 */
+       /* Дополнения для блока 8 */
         .int-card {
             background: var(--milk);
             padding: 30px;
@@ -381,7 +410,7 @@
             <h2 style="text-align: center; margin-bottom: 35px;">Возможные сценарии</h2>
             <div class="scenarios-visual">
                 <div class="sc-card morning">
-                    <div class="sc-tag">Сценарий 1</div>
+                    <div class="sc-tag" style="background: var(--red);">Сценарий 1</div>
                     <h3 style="margin-bottom: 15px;">Линза дня</h3>
                     <p style="margin-bottom: 25px; font-size: 0.95rem;">Выбери карточку в начале дня. Пропусти ее через медитацию и используй как линзу для происходящего.</p>
                     <div class="keys-cloud">
