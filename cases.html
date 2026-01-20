@@ -44,8 +44,26 @@
         /* SCENARIOS */
         .scenarios-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .sc-card { padding: 40px; border-radius: 40px; background: white; border: 1px solid var(--border); }
-        .key-bubble { font-size: 0.85rem; padding: 12px 20px; background: white; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); margin-bottom: 8px; width: fit-content; }
+/* Подсветка тезисов в сценариях при наведении */
+        .key-bubble { 
+            font-size: 0.85rem; 
+            padding: 12px 20px; 
+            background: white; 
+            border-radius: 15px; 
+            border: 1px solid rgba(0,0,0,0.05); 
+            margin-bottom: 8px; 
+            width: fit-content; 
+            cursor: pointer; 
+            transition: all 0.3s ease; /* Плавный переход */
+        }
 
+        .key-bubble:hover { 
+            background: var(--carrot); /* Окрашивание в рыжий */
+            color: white; 
+            border-color: var(--carrot); 
+            transform: scale(1.05); /* Легкое увеличение */
+            box-shadow: 0 5px 15px rgba(230,126,81,0.15); /* Мягкая тень */
+        }
         /* BOT SECTION */
         .iphone-frame { width: 220px; height: 440px; background: #2d2d2d; border-radius: 40px; border: 8px solid #333; overflow: hidden; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .screen-img { width: 100%; height: 100%; object-fit: contain; background: #e1f7fb; display: block; }
