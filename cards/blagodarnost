@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Благодарность — Состояние Изобилия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --milk: #FDFBF7;
+            --carrot: #E67E51;
+            --blue: #A5C4D4;
+            --graphite: #2D2D2D;
+            --text-soft: #555555;
+            --border: rgba(230, 126, 81, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--milk); 
+            color: var(--graphite); 
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .fluid-container { max-width: 900px; margin: 0 auto; padding: 100px 25px; position: relative; }
+        
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(3rem, 10vw, 6rem); 
+            font-weight: 400; 
+            color: var(--carrot); 
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: -0.02em;
+        }
+
+        /* Абстрактные элементы */
+        .sphere { 
+            position: absolute; 
+            border-radius: 50%; 
+            filter: blur(40px); 
+            z-index: -1; 
+            opacity: 0.4;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        .sphere-1 { width: 300px; height: 300px; background: var(--blue); top: 10%; left: -10%; }
+        .sphere-2 { width: 250px; height: 250px; background: var(--carrot); bottom: 10%; right: -5%; animation-delay: -5s; }
+
+        @keyframes float { 
+            from { transform: translate(0, 0); } 
+            to { transform: translate(30px, 50px); } 
+        }
+
+        .text-flow { font-size: 1.25rem; font-weight: 400; color: var(--graphite); margin-bottom: 120px; position: relative; }
+        .text-flow p { margin-bottom: 40px; opacity: 0.9; }
+
+        /* Декоративные загогулины */
+        .squiggle { width: 100px; height: 2px; background: var(--carrot); margin: 60px auto; opacity: 0.3; border-radius: 2px; }
+        
+        /* Инфографика Вдох-Выдох */
+        .breath-wrap { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 40px; 
+            margin: 80px 0;
+            text-align: center;
+        }
+        .breath-circle { 
+            width: 180px; height: 180px; 
+            border: 1px solid var(--carrot); 
+            border-radius: 50%; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            font-family: 'Playfair Display';
+            font-style: italic;
+            transition: 0.5s;
+        }
+        .breath-circle:hover { background: white; transform: scale(1.05); box-shadow: 0 10px 30px rgba(230,126,81,0.1); }
+        .breath-arrow { font-size: 2rem; color: var(--carrot); opacity: 0.5; }
+
+        /* Переключатель Режимов */
+        .mode-switch { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+            margin: 100px 0;
+        }
+        .mode-card { 
+            padding: 40px; 
+            background: white; 
+            border-radius: 40px; 
+            border: 1px solid var(--border); 
+            transition: 0.4s;
+        }
+        .mode-card.abundance { border-color: var(--blue); background: rgba(165, 196, 212, 0.05); }
+        .mode-card h4 { font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px; color: var(--carrot); }
+        .mode-card.abundance h4 { color: var(--blue); }
+
+        .neuro-link { 
+            padding: 40px; 
+            border-left: 2px solid var(--blue); 
+            margin: 60px 0; 
+            font-style: italic; 
+            font-size: 1.1rem;
+            color: var(--text-soft);
+        }
+
+        .footer-grace { 
+            text-align: center; 
+            font-family: 'Playfair Display'; 
+            font-size: 2rem; 
+            color: var(--carrot); 
+            margin-top: 150px;
+            line-height: 1.4;
+        }
+
+        /* Анимация при прокрутке */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .mode-switch, .breath-wrap { flex-direction: column; grid-template-columns: 1fr; }
+            .essence-capsule { padding: 40px 20px; }
+            h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sphere sphere-1"></div>
+    <div class="sphere sphere-2"></div>
+
+    <div class="fluid-container">
+        <h1 class="fade-in">Благодарность</h1>
+
+        <div class="text-flow fade-in">
+            <p>Благодарность — способность не забывать источник полученного добра</p>
+            <p>Благодарность — это осознанный акт завершения энергетического обмена</p>
+            <p>Дарить благо в ответ на полученное; возвращение полученного импульса с добавленной стоимостью — Благодарность — это механизм, обеспечивающий баланс в системах обмена</p>
+        </div>
+
+        <div class="breath-wrap fade-in">
+            <div class="breath-circle">
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Получить дар</span>
+                <span style="font-size: 1.8rem;">Вдох</span>
+            </div>
+            <div class="breath-arrow">⟷</div>
+            <div class="breath-circle" style="border-color: var(--blue);">
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Сказать спасибо</span>
+                <span style="font-size: 1.8rem;">Выдох</span>
+            </div>
+        </div>
+
+        <div class="text-flow fade-in" style="text-align: center;">
+            <p>Благодарность — это естественный выдох, необходимый для следующего вдоха</p>
+            <div class="squiggle"></div>
+            <p style="font-family: 'Playfair Display'; font-size: 1.8rem; font-style: italic;">Благодарность — это настройка фильтра восприятия и оценки</p>
+        </div>
+
+        <div class="mode-switch fade-in">
+            <div class="mode-card">
+                <h4>Дефицит</h4>
+                <p>«мне мало» — «мне должны» — фокусировка на том, чего не хватает — ты видишь мир бедным</p>
+            </div>
+            <div class="mode-card abundance">
+                <h4>Изобилие</h4>
+                <p>«у меня уже есть» — «мне дали» — фокусировка на возможностях — ты начинаешь видеть ресурсы</p>
+            </div>
+        </div>
+
+        <div class="text-flow fade-in">
+            <p>Это переключение с режима «Дефицит» на режим «Изобилие»</p>
+            <div class="neuro-link">
+                Когда человек практикует благодарность, он физически перестраивает нейронные сети на поиск возможностей, ресурсов и поддержки и приходит в состояние удовлетворенности
+            </div>
+            <p>Быть благодарным — находиться в состоянии благодати: радости, изобилия; быть приятным миру, излучать приязнь</p>
+        </div>
+
+        <div class="footer-grace fade-in">
+            Благодарность — это не долг, а радостная потребность вернуть миру часть полученного тепла — состояние, которое переключает с претензий на умение ценить — открывая двери для новых возможностей — Быть благодарным — быть удовлетворенным
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('visible'); 
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
